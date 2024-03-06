@@ -7,10 +7,10 @@ const getAll = catchError(async(req, res) => {
 });
 
 const create = catchError(async(req, res) => {
-    const { first_name, last_name, nationality,image, birthday  } = req.body;
+    const { firstName, lastName, nationality,image, birthday  } = req.body;
     const directors = await Directors.create({
-        first_name: first_name,
-        last_name: last_name,
+        firstName: firstName,
+        lastName: lastName,
         nationality: nationality,
         image: image,
         birthday:birthday,
@@ -35,10 +35,10 @@ const remove = catchError(async(req, res) => {
 
 const update = catchError(async(req, res) => {
     const { id } = req.params;
-    const { first_name, last_name, nationality,image, birthday  } = req.body;
+    const { firstName, lastName, nationality,image, birthday  } = req.body;
     const directors = await Directors.update({
-        first_name: first_name,
-        last_name: last_name,
+        firstName: firstName,
+        lastName: lastName,
         nationality: nationality,
         image: image,
         birthday:birthday,
