@@ -32,10 +32,10 @@ const update = catchError(async(req, res) => {
     const { id } = req.params;
     const { name  } = req.body;
     const genres = await Genres.update({
-        name: name
-        
+        name: name,
+                
     }, { where: { id: id }, returning: true });
-    if(result[0] === 0) return res.sendStatus(404);
+    if(genres[0] === 0) return res.sendStatus(404);
     return res.json(genres[1][0])
 });
 
